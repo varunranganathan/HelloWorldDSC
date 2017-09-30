@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--RelativeLayout lets you make Views postioned relative to each other-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context="com.varun.helloworlddsc.CodeLab1Activity">
+    <!--TextView is to display the number, put it in the center of the screen
+    ie centerVertical is true and centerHorizontal is true
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/numberTextView"
+        android:textSize="56sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
+    <!-- You now have 3 buttons horizontal to each other for doing the three operations
+    We achieve this using a LinearLayout with orientation horizontal
+    We make the width wrap_content because we need to buttons to only take up as much space as required, not the full screen width
+    Click on this LinearLayout and see it highlighted in the preview to understand this better
+    This layout is also made to be below the TextView we made(with ID numberTextView)
+   Remember: @+id/ is to assign a new ID
+   @id/ is to refer an already existing ID
+   That is why layout_below="@id/numberTextView"
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/numberTextView"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toast"
+            android:id="@+id/toast_button"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Count"
+            android:id="@+id/count_button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Random"
+            android:id="@+id/random_button"
+            />
+    </LinearLayout>
+</RelativeLayout>
